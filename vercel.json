@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/robots.txt",
+      "destination": "/api/robots"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap?type=index"
+    },
+    {
+      "source": "/sitemap-pages.xml",
+      "destination": "/api/sitemap?type=pages"
+    },
+    {
+      "source": "/sitemap-works.xml",
+      "destination": "/api/sitemap?type=works"
+    },
+    {
+      "source": "/sitemap-episodes-(.*).xml",
+      "destination": "/api/sitemap?type=episodes&page=$1"
+    },
+    {
+      "source": "/(hilltopads[a-f0-9\\-_]+\\.html)",
+      "destination": "/api/hilltopads-verification?file=$1"
+    },
+    {
+      "source": "/(google[a-f0-9]+\\.html)",
+      "destination": "/api/google-verification?file=$1"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ]
+}
